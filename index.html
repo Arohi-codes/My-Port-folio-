@@ -1,87 +1,195 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arohi Portfolio 🌸</title>
 
-    <style>
-        body {
-            font-family: Arial;
-            background: #f4f4f9;
-            margin: 0;
-            padding: 0;
-        }
+<style>
 
-        .container {
-            width: 80%;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            margin-top: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px #ccc;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Trebuchet MS', sans-serif;
+}
 
-        h1 {
-            color: #4CAF50;
-            text-align: center;
-        }
+body{
+    background:linear-gradient(135deg,#ffd6e8,#ffeef7,#fff5fb);
+    color:#444;
+}
 
-        h2 {
-            color: #333;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 5px;
-        }
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+.hero{
+    text-align:center;
+    padding:60px 20px;
+}
 
-        ul li {
-            background: #eee;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
-        }
+.hero h1{
+    font-size:3rem;
+    color:#ff4f93;
+}
 
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-            color: gray;
-        }
-    </style>
+.hero p{
+    margin-top:10px;
+    font-size:1.2rem;
+}
 
+.card{
+    background:white;
+    padding:25px;
+    margin:20px 0;
+    border-radius:25px;
+    box-shadow:0 8px 20px rgba(255,105,180,0.15);
+}
+
+h2{
+    color:#ff4f93;
+    margin-bottom:15px;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.skill{
+    background:#ffe3f0;
+    padding:10px 15px;
+    border-radius:20px;
+    font-weight:bold;
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.project{
+    background:#fff0f8;
+    padding:15px;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.project:hover{
+    transform:translateY(-5px);
+}
+
+.quote{
+    text-align:center;
+    font-size:1.2rem;
+    color:#ff4f93;
+    font-style:italic;
+}
+
+.footer{
+    text-align:center;
+    padding:20px;
+    color:#777;
+}
+
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-    <h1>Hi, I'm a Beginner Developer 🚀</h1>
+<div class="hero">
+<h1>🌸 Hi, I'm Arohi 🎀</h1>
+<p>💻 Python Learner | 🚀 Project Builder | 🌷 Future Software Engineer</p>
+</div>
 
-    <h2>About Me</h2>
-    <p>I am learning HTML, CSS and Python and building small projects.</p>
+<div class="card">
+<h2>🌸 About Me</h2>
 
-    <h2>Skills</h2>
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Python (Learning)</li>
-    </ul>
+<p>
+🎀 I am a student learning Python through projects and practice.
+<br><br>
+🌷 I enjoy building apps, solving coding problems and improving every day.
+<br><br>
+💖 I believe that small progress every day creates big results.
+</p>
 
-    <h2>Projects</h2>
-    <ul>
-        <li>Rock Paper Scissors Game</li>
-        <li>Quiz Game</li>
-        <li>Calculator</li>
-    </ul>
+</div>
 
-    <h2>Contact</h2>
-    <p>Email me for collaboration 🚀</p>
+<div class="card">
+<h2>🎀 Skills</h2>
 
-    <div class="footer">
-        © 2026 My Portfolio
-    </div>
+<div class="skills">
+<div class="skill">🐍 Python</div>
+<div class="skill">🔁 Loops</div>
+<div class="skill">⚙️ Functions</div>
+<div class="skill">📋 Lists</div>
+<div class="skill">📚 Dictionaries</div>
+<div class="skill">💻 GitHub</div>
+<div class="skill">🧩 Problem Solving</div>
+</div>
+
+</div>
+
+<div class="card">
+<h2>🌷 My Projects</h2>
+
+<div class="projects">
+<div class="project">🌸 Period Tracker V1</div>
+<div class="project">🏧 ATM System V2</div>
+<div class="project">🏦 Bank Management System</div>
+<div class="project">📚 Study Planner</div>
+<div class="project">❓ Quiz Game</div>
+<div class="project">✂️ Rock Paper Scissors</div>
+<div class="project">🎯 Guess The Number</div>
+<div class="project">🤖 Basic AI Chatbot</div>
+<div class="project">➗ Multiplication Table Generator</div>
+<div class="project">🔢 Odd Even Game</div>
+</div>
+
+</div>
+
+<div class="card">
+<h2>🎯 Current Goal</h2>
+
+<p>
+🌸 Become a skilled software engineer.
+<br><br>
+🎀 Build useful projects.
+<br><br>
+🌷 Learn something new every day.
+</p>
+
+</div>
+
+<div class="card">
+<h2>💖 Fun Facts</h2>
+
+<p>
+🌸 I love coding projects.
+<br><br>
+🎀 Bugs feel like challenges.
+<br><br>
+🌷 I enjoy learning by building.
+</p>
+
+</div>
+
+<div class="card">
+<div class="quote">
+🌸 "Sometimes we just have to start." 🎀
+</div>
+</div>
+
+<div class="footer">
+🌷 Made with love by Arohi 🎀
+</div>
 
 </div>
 
