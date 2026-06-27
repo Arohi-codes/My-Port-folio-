@@ -1,197 +1,488 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arohi Portfolio 🌸</title>
+
+<title>Arohi | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
 
 <style>
 
+/* =========================
+   BASIC RESET
+========================= */
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Trebuchet MS', sans-serif;
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:'Poppins',sans-serif;
+
+scroll-behavior:smooth;
+
 }
 
 body{
-    background:linear-gradient(135deg,#ffd6e8,#ffeef7,#fff5fb);
-    color:#444;
+
+background:linear-gradient(135deg,#ffe4f3,#f8e9ff,#eaf6ff);
+
+color:#444;
+
+overflow-x:hidden;
+
 }
 
-.container{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-    padding:20px;
+/* =========================
+   HEADER
+========================= */
+
+header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+padding:18px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(255,255,255,.35);
+
+backdrop-filter:blur(15px);
+
+z-index:1000;
+
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+
 }
+
+.logo{
+
+font-family:'Pacifico',cursive;
+
+font-size:30px;
+
+color:#ff4fa2;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+margin-left:25px;
+
+font-weight:600;
+
+color:#555;
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#ff4fa2;
+
+}
+
+/* =========================
+   HERO SECTION
+========================= */
 
 .hero{
-    text-align:center;
-    padding:60px 20px;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:30px;
+
 }
 
-.hero h1{
-    font-size:3rem;
-    color:#ff4f93;
+.hero-box{
+
+background:rgba(255,255,255,.4);
+
+padding:60px;
+
+border-radius:35px;
+
+backdrop-filter:blur(20px);
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+max-width:750px;
+
+animation:fadeIn 1.2s ease;
+
 }
 
-.hero p{
-    margin-top:10px;
-    font-size:1.2rem;
+.hero-box h1{
+
+font-size:58px;
+
+margin-bottom:15px;
+
 }
 
-.card{
-    background:white;
-    padding:25px;
-    margin:20px 0;
-    border-radius:25px;
-    box-shadow:0 8px 20px rgba(255,105,180,0.15);
+.hero-box span{
+
+color:#ff4fa2;
+
 }
 
-h2{
-    color:#ff4f93;
-    margin-bottom:15px;
+.hero-box h2{
+
+font-size:28px;
+
+color:#8b5cf6;
+
+margin-bottom:20px;
+
 }
 
-.skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
+.hero-box p{
+
+font-size:18px;
+
+line-height:1.8;
+
+margin-bottom:35px;
+
 }
 
-.skill{
-    background:#ffe3f0;
-    padding:10px 15px;
-    border-radius:20px;
-    font-weight:bold;
+.button{
+
+display:inline-block;
+
+padding:15px 35px;
+
+background:#ff4fa2;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:40px;
+
+font-weight:bold;
+
+transition:.3s;
+
+box-shadow:0 10px 25px rgba(255,79,162,.25);
+
 }
 
-.projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
+.button:hover{
+
+transform:translateY(-5px);
+
+background:#ff2f8f;
+
 }
 
-.project{
-    background:#fff0f8;
-    padding:15px;
-    border-radius:15px;
-    transition:0.3s;
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
 }
 
-.project:hover{
-    transform:translateY(-5px);
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
 }
 
-.quote{
-    text-align:center;
-    font-size:1.2rem;
-    color:#ff4f93;
-    font-style:italic;
-}
-
-.footer{
-    text-align:center;
-    padding:20px;
-    color:#777;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
+<header>
 
-<div class="hero">
-<h1>🌸 Hi, I'm Arohi 🎀</h1>
-<p>💻 Python Learner | 🚀 Project Builder | 🌷 Future Software Engineer</p>
-</div>
+<div class="logo">Arohi 🌸</div>
 
-<div class="card">
-<h2>🌸 About Me</h2>
+<nav>
 
-<p>
-🎀 I am a student learning Python through projects and practice.
-<br><br>
-🌷 I enjoy building apps, solving coding problems and improving every day.
-<br><br>
-💖 I believe that small progress every day creates big results.
-</p>
+<a href="#home">Home</a>
 
-</div>
+<a href="#about">About</a>
 
-<div class="card">
-<h2>🎀 Skills</h2>
+<a href="#skills">Skills</a>
 
-<div class="skills">
-<div class="skill">🐍 Python</div>
-<div class="skill">🔁 Loops</div>
-<div class="skill">⚙️ Functions</div>
-<div class="skill">📋 Lists</div>
-<div class="skill">📚 Dictionaries</div>
-<div class="skill">💻 GitHub</div>
-<div class="skill">🧩 Problem Solving</div>
-</div>
+<a href="#projects">Projects</a>
 
-</div>
+<a href="#contact">Contact</a>
 
-<div class="card">
-<h2>🌷 My Projects</h2>
+</nav>
 
-<div class="projects">
-<div class="project">🌸 Period Tracker V1</div>
-<div class="project">🏧 ATM System V2</div>
-<div class="project">🏦 Bank Management System</div>
-<div class="project">📚 Study Planner</div>
-<div class="project">❓ Quiz Game</div>
-<div class="project">✂️ Rock Paper Scissors</div>
-<div class="project">🎯 Guess The Number</div>
-<div class="project">🤖 Basic AI Chatbot</div>
-<div class="project">➗ Multiplication Table Generator</div>
-<div class="project">🔢 Odd Even Game</div>
-</div>
+</header>
 
-</div>
+<section class="hero" id="home">
 
-<div class="card">
-<h2>🎯 Current Goal</h2>
+<div class="hero-box">
+
+<h1>Hi, I'm <span>Arohi</span> 💖</h1>
+
+<h2>Future Software Engineer 👩‍💻</h2>
 
 <p>
-🌸 Become a skilled software engineer.
-<br><br>
-🎀 Build useful projects.
-<br><br>
-🌷 Learn something new every day.
+
+Dreaming big • Building projects • Learning every day ✨
+
 </p>
+
+<a class="button" href="#projects">Explore My Work 🚀</a>
 
 </div>
 
-<div class="card">
-<h2>💖 Fun Facts</h2>
+</section>
+
+
+<section id="about" style="padding:120px 10%;">
+
+<h2 style="text-align:center;font-size:40px;color:#ff4fa2;font-family:'Pacifico',cursive;margin-bottom:40px;">
+About Me 🌸
+</h2>
+
+<div style="background:rgba(255,255,255,.4);padding:40px;border-radius:30px;backdrop-filter:blur(15px);box-shadow:0 10px 30px rgba(0,0,0,.08);max-width:900px;margin:auto;text-align:center;font-size:18px;line-height:2;">
+
+Hi! I'm <b>Arohi</b> 💖 <br><br>
+
+I'm 13 years old and I love coding. <br>
+I started my journey with small projects and now I am learning Python, HTML, CSS and JavaScript. <br><br>
+
+My dream is to work at Google and later build my own startup 🚀 <br><br>
+
+I believe consistency + practice = success ✨
+
+</div>
+
+</section>
+
+<section id="skills" style="padding:120px 10%;">
+
+<h2 style="text-align:center;font-size:40px;color:#ff4fa2;font-family:'Pacifico',cursive;margin-bottom:50px;">
+My Skills 💻
+</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;">
+
+<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;text-align:center;backdrop-filter:blur(15px);box-shadow:0 10px 25px rgba(0,0,0,.08);">
+
+<h3>🐍 Python</h3>
+<p>15+ Projects Built</p>
+
+</div>
+
+<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;text-align:center;backdrop-filter:blur(15px);box-shadow:0 10px 25px rgba(0,0,0,.08);">
+
+<h3>🌐 HTML</h3>
+<p>Web Structure Expert</p>
+
+</div>
+
+<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;text-align:center;backdrop-filter:blur(15px);box-shadow:0 10px 25px rgba(0,0,0,.08);">
+
+<h3>🎨 CSS</h3>
+<p>Beautiful UI Designer</p>
+
+</div>
+
+<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;text-align:center;backdrop-filter:blur(15px);box-shadow:0 10px 25px rgba(0,0,0,.08);">
+
+<h3>⚡ JavaScript</h3>
+<p>Learning Animations & Logic</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="projects" style="padding:120px 10%;">
+
+<h2 style="text-align:center;font-size:40px;color:#ff4fa2;font-family:'Pacifico',cursive;margin-bottom:50px;">
+My Projects 🚀
+</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;">
+
+<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;backdrop-filter:blur(15px);text-align:center;">
+
+<h3>💳 ATM Pro</h3>
+<p>Python based ATM system</p>
+
+</div>
+
+<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;backdrop-filter:blur(15px);text-align:center;">
+
+<h3>📚 Library Tracker</h3>
+<p>Book management system</p>
+
+</div>
+
+<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;backdrop-filter:blur(15px);text-align:center;">
+
+<h3>📅 Period Tracker</h3>
+<p>My first GitHub project</p>
+
+</div>
+
+<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;backdrop-filter:blur(15px);text-align:center;">
+
+<h3>🏦 Bank System</h3>
+<p>Advanced Python project</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="dreams" style="padding:120px 10%;">
+
+<h2 style="text-align:center;font-size:40px;color:#ff4fa2;font-family:'Pacifico',cursive;margin-bottom:50px;">
+My Dreams 🌸
+</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;">
+
+<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;text-align:center;backdrop-filter:blur(15px);">
+
+<h3>💻 Google</h3>
+<p>Become Software Engineer</p>
+
+</div>
+
+<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;text-align:center;backdrop-filter:blur(15px);">
+
+<h3>🚀 Startup</h3>
+<p>Build my own company</p>
+
+</div>
+
+<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;text-align:center;backdrop-filter:blur(15px);">
+
+<h3>🏍 Bike</h3>
+<p>Buy dream bike</p>
+
+</div>
+
+<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;text-align:center;backdrop-filter:blur(15px);">
+
+<h3>🌍 Travel</h3>
+<p>World tour</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" style="padding:120px 10%;text-align:center;">
+
+<h2 style="font-size:40px;color:#ff4fa2;font-family:'Pacifico',cursive;margin-bottom:30px;">
+Contact Me 💌
+</h2>
+
+<p style="font-size:18px;line-height:2;">
+
+Email: yourname@email.com <br><br>
+
+GitHub: https://github.com/yourusername <br><br>
+
+LinkedIn: coming soon ✨
+
+</p>
+
+</section>
+
+<footer style="text-align:center;padding:40px;background:rgba(255,255,255,.4);backdrop-filter:blur(15px);margin-top:50px;">
 
 <p>
-🌸 I love coding projects.
-<br><br>
-🎀 Bugs feel like challenges.
-<br><br>
-🌷 I enjoy learning by building.
+
+Made with 💖 by Arohi | Keep learning, keep growing ✨
+
 </p>
 
-</div>
+</footer>
 
-<div class="card">
-<div class="quote">
-🌸 "Sometimes we just have to start." 🎀
-</div>
-</div>
+<script>
 
-<div class="footer">
-🌷 Made with love by Arohi 🎀
-</div>
+/* =========================
+   SIMPLE TEXT EFFECT
+========================= */
 
-</div>
+const text = [
+"Future Software Engineer 👩‍💻",
+"Python Developer 🐍",
+"Startup Founder 🚀",
+"Dream Big ✨"
+];
+
+let i = 0;
+
+function changeText(){
+
+document.querySelector(".hero-box h2").innerText = text[i];
+
+i++;
+
+if(i >= text.length){
+
+i = 0;
+
+}
+
+}
+
+setInterval(changeText,2000);
+
+</script>
 
 </body>
+
 </html>
