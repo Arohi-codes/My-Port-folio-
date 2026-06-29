@@ -1,80 +1,70 @@
+/* ==========================
+        THEME TOGGLE
+========================== */
 
-// 🌸 Typing Animation
+const themeBtn = document.querySelector(".theme-btn");
 
-const texts = [
-"Future Software Engineer 👩‍💻",
-"Python Developer 🐍",
-"Startup Founder 🚀",
-"Dream Big ✨"
-];
+themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
 
-let index = 0;
-let char = 0;
-
-function typeEffect(){
-
-let h2 = document.querySelector(".hero-box h2");
-
-if(char < texts[index].length){
-
-h2.innerHTML += texts[index].charAt(char);
-char++;
-setTimeout(typeEffect,100);
-
-}else{
-
-setTimeout(eraseEffect,1500);
-
-}
-
-}
-
-function eraseEffect(){
-
-let h2 = document.querySelector(".hero-box h2");
-
-if(char > 0){
-
-h2.innerHTML = texts[index].substring(0,char-1);
-char--;
-setTimeout(eraseEffect,50);
-
-}else{
-
-index++;
-if(index >= texts.length){
-index = 0;
-}
-
-setTimeout(typeEffect,300);
-
-}
-
-}
-
-typeEffect();
+    if(document.body.classList.contains("dark-mode")){
+        themeBtn.innerHTML = "☀️";
+    } else {
+        themeBtn.innerHTML = "🌙";
+    }
+});
 
 
-// 🌸 Floating Hearts Generator
+/* ==========================
+        SMOOTH SCROLL
+========================== */
 
-function createHeart(){
+document.querySelectorAll("nav ul li a").forEach(link => {
+    link.addEventListener("click", function(e){
+        e.preventDefault();
 
-const heart = document.createElement("div");
+        const target = document.querySelector(this.getAttribute("href"));
 
-heart.classList.add("heart");
+        target.scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+});
 
-heart.innerHTML = "💖";
 
-heart.style.left = Math.random() * 100 + "vw";
+/* ==========================
+        SCROLL ANIMATION
+========================== */
 
-heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+window.addEventListener("scroll", () => {
 
-document.body.appendChild(heart);
+    let elements = document.querySelectorAll(".project-card, .skill-card, .stat-box, .contact-card, .timeline-item");
 
-setTimeout(() => {
-heart.remove();
-}, 6000);
+    elements.forEach(el => {
 
-}
+        let position = el.getBoundingClientRect().top;
 
-setInterval(createHeart, 300);
+        let screenHeight = window.innerHeight;
+
+        if(position < screenHeight - 100){
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+            el.style.transition = "0.6s ease";
+        } else {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(40px)";
+        }
+
+    });
+
+});
+
+
+/* ==========================
+        INITIAL STATE
+========================== */
+
+document.querySelectorAll(".project-card, .skill-card, .stat-box, .contact-card, .timeline-item").forEach(el => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(40px)";
+});
