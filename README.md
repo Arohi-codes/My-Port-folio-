@@ -1,61 +1,63 @@
-# Hi, I'm Arohi 👋
+# 🌸 Arohi's Developer Portfolio
 
-🌸 A student learning Python and building projects.
+Welcome to my personal portfolio repository! 🚀  
+This project showcases my journey as a beginner developer learning Python and Web Development.
 
-## About Me
+---
 
-* Learning Python through practice and projects
-* Interested in software engineering and app development
-* Building projects regularly to improve my skills
-* Learning GitHub and project development
+## 💼 About Me
 
-## Current Skills
+Hi! I'm **Arohi**, a passionate learner exploring:
 
-* Python Basics
-* Variables
-* Input & Output
-* Conditions (if/else)
-* Loops
-* Functions
-* Lists
-* Dictionaries
-* Basic Problem Solving
-* GitHub
+- 🐍 Python Programming  
+- 🌐 Web Development (HTML, CSS, JavaScript)  
+- 💡 Problem Solving  
+- 🚀 Building real-world projects  
 
-## Projects
+I enjoy creating simple but useful applications and improving my coding skills every day.
 
-* Period Tracker V1
-* Study Planner
-* Bank Management System
-* ATM System
-* ATM System V2
-* Quiz Game
-* Rock Paper Scissors
-* Guess The Number
-* Odd-Even Game
-* Multiplication Table Generator
-* Basic AI Chatbot
+---
 
-And many other mini Python projects.
+## 📂 Projects Included
 
-## What I'm Learning Now
+This repository contains **15+ projects**, including:
 
-* Python
-* Problem Solving
-* Project Building
-* Writing Better Code
+### 🐍 Python Projects
+- Student Management System  
+- ATM System  
+- Period Tracker  
+- Calculator  
+- Basic Mini Apps  
 
-## Goals
+### 🌐 Web Projects
+- Portfolio Website  
+- Landing Pages  
+- UI Practice Projects  
 
-* Become a skilled software engineer
-* Build useful apps
-* Keep improving through projects
-* Learn something new every day
+---
 
-## My Favorite Quote
+## ✨ Features of Portfolio
 
-"Sometimes we just have to start."
+- 🎨 Modern aesthetic UI  
+- 📱 Fully responsive design  
+- 💎 Clean and minimal layout  
+- ⚡ Smooth animations  
+- 🌙 Dark mode support (optional upgrade)
 
-## GitHub Journey
+---
 
-Started learning coding in 2026 and building projects through consistent practice.
+## 🛠️ Tech Stack
+
+- HTML5  
+- CSS3  
+- JavaScript  
+- Python  
+- Git & GitHub  
+
+---
+
+## 🚀 How to Run
+
+1. Clone this repository
+```bash
+git clone https://github.com/Arohi-codes/portfolio.git
