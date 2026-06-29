@@ -3,486 +3,253 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Arohi | Portfolio</title>
+    <title>Arohi | Portfolio</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="style.css">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<style>
-
-/* =========================
-   BASIC RESET
-========================= */
-
-*{
-
-margin:0;
-
-padding:0;
-
-box-sizing:border-box;
-
-font-family:'Poppins',sans-serif;
-
-scroll-behavior:smooth;
-
-}
-
-body{
-
-background:linear-gradient(135deg,#ffe4f3,#f8e9ff,#eaf6ff);
-
-color:#444;
-
-overflow-x:hidden;
-
-}
-
-/* =========================
-   HEADER
-========================= */
-
-header{
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-padding:18px 8%;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-background:rgba(255,255,255,.35);
-
-backdrop-filter:blur(15px);
-
-z-index:1000;
-
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-
-}
-
-.logo{
-
-font-family:'Pacifico',cursive;
-
-font-size:30px;
-
-color:#ff4fa2;
-
-}
-
-nav a{
-
-text-decoration:none;
-
-margin-left:25px;
-
-font-weight:600;
-
-color:#555;
-
-transition:.3s;
-
-}
-
-nav a:hover{
-
-color:#ff4fa2;
-
-}
-
-/* =========================
-   HERO SECTION
-========================= */
-
-.hero{
-
-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-text-align:center;
-
-padding:30px;
-
-}
-
-.hero-box{
-
-background:rgba(255,255,255,.4);
-
-padding:60px;
-
-border-radius:35px;
-
-backdrop-filter:blur(20px);
-
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-max-width:750px;
-
-animation:fadeIn 1.2s ease;
-
-}
-
-.hero-box h1{
-
-font-size:58px;
-
-margin-bottom:15px;
-
-}
-
-.hero-box span{
-
-color:#ff4fa2;
-
-}
-
-.hero-box h2{
-
-font-size:28px;
-
-color:#8b5cf6;
-
-margin-bottom:20px;
-
-}
-
-.hero-box p{
-
-font-size:18px;
-
-line-height:1.8;
-
-margin-bottom:35px;
-
-}
-
-.button{
-
-display:inline-block;
-
-padding:15px 35px;
-
-background:#ff4fa2;
-
-color:white;
-
-text-decoration:none;
-
-border-radius:40px;
-
-font-weight:bold;
-
-transition:.3s;
-
-box-shadow:0 10px 25px rgba(255,79,162,.25);
-
-}
-
-.button:hover{
-
-transform:translateY(-5px);
-
-background:#ff2f8f;
-
-}
-
-/* =========================
-   ANIMATION
-========================= */
-
-@keyframes fadeIn{
-
-from{
-
-opacity:0;
-
-transform:translateY(30px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-</style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<header>
+    <!-- Background Blobs -->
 
-<div class="logo">Arohi 🌸</div>
+    <div class="blob blob1"></div>
 
-<nav>
+    <div class="blob blob2"></div>
 
-<a href="#home">Home</a>
+    <div class="blob blob3"></div>
 
-<a href="#about">About</a>
 
-<a href="#skills">Skills</a>
 
-<a href="#projects">Projects</a>
+    <!-- Navigation -->
 
-<a href="#contact">Contact</a>
+    <nav>
 
-</nav>
+        <div class="logo">
 
-</header>
+            Arohi.
 
-<section class="hero" id="home">
+        </div>
 
-<div class="hero-box">
+        <ul>
 
-<h1>Hi, I'm <span>Arohi</span> 💖</h1>
+            <li><a href="#home">Home</a></li>
 
-<h2>Future Software Engineer 👩‍💻</h2>
+            <li><a href="#about">About</a></li>
 
-<p>
+            <li><a href="#skills">Skills</a></li>
 
-Dreaming big • Building projects • Learning every day ✨
+            <li><a href="#projects">Projects</a></li>
 
-</p>
+            <li><a href="#contact">Contact</a></li>
 
-<a class="button" href="#projects">Explore My Work 🚀</a>
+        </ul>
 
-</div>
+    </nav>
 
-</section>
 
 
-<section id="about" style="padding:120px 10%;">
+    <!-- Hero Section -->
 
-<h2 style="text-align:center;font-size:40px;color:#ff4fa2;font-family:'Pacifico',cursive;margin-bottom:40px;">
-About Me 🌸
-</h2>
+    <section class="hero" id="home">
 
-<div style="background:rgba(255,255,255,.4);padding:40px;border-radius:30px;backdrop-filter:blur(15px);box-shadow:0 10px 30px rgba(0,0,0,.08);max-width:900px;margin:auto;text-align:center;font-size:18px;line-height:2;">
+        <div class="hero-left">
 
-Hi! I'm <b>Arohi</b> 💖 <br><br>
+            <p class="hello">
 
-I'm 13 years old and I love coding. <br>
-I started my journey with small projects and now I am learning Python, HTML, CSS and JavaScript. <br><br>
+                👋 Hello, I'm
 
-My dream is to work at Google and later build my own startup 🚀 <br><br>
+            </p>
 
-I believe consistency + practice = success ✨
+            <h1>
 
-</div>
+                Arohi
 
-</section>
+            </h1>
 
-<section id="skills" style="padding:120px 10%;">
+            <h2>
 
-<h2 style="text-align:center;font-size:40px;color:#ff4fa2;font-family:'Pacifico',cursive;margin-bottom:50px;">
-My Skills 💻
-</h2>
+                Future Software Engineer
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;">
+            </h2>
 
-<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;text-align:center;backdrop-filter:blur(15px);box-shadow:0 10px 25px rgba(0,0,0,.08);">
+            <p class="description">
 
-<h3>🐍 Python</h3>
-<p>15+ Projects Built</p>
+                I am a passionate Class 8 student learning Python,
+                Web Development and UI Design while building real-world
+                projects every month.
 
-</div>
+            </p>
 
-<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;text-align:center;backdrop-filter:blur(15px);box-shadow:0 10px 25px rgba(0,0,0,.08);">
+            <div class="buttons">
 
-<h3>🌐 HTML</h3>
-<p>Web Structure Expert</p>
+                <a href="#projects" class="btn1">
 
-</div>
+                    View Projects
 
-<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;text-align:center;backdrop-filter:blur(15px);box-shadow:0 10px 25px rgba(0,0,0,.08);">
+                </a>
 
-<h3>🎨 CSS</h3>
-<p>Beautiful UI Designer</p>
+                <a href="#contact" class="btn2">
 
-</div>
+                    Contact Me
 
-<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;text-align:center;backdrop-filter:blur(15px);box-shadow:0 10px 25px rgba(0,0,0,.08);">
+                </a>
 
-<h3>⚡ JavaScript</h3>
-<p>Learning Animations & Logic</p>
+            </div>
 
-</div>
+        </div>
 
-</div>
 
-</section>
 
-<section id="projects" style="padding:120px 10%;">
+        <div class="hero-right">
 
-<h2 style="text-align:center;font-size:40px;color:#ff4fa2;font-family:'Pacifico',cursive;margin-bottom:50px;">
-My Projects 🚀
-</h2>
+            <div class="glass-card">
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;">
+                <img src="images/profile.png" alt="Profile">
 
-<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;backdrop-filter:blur(15px);text-align:center;">
+            </div>
 
-<h3>💳 ATM Pro</h3>
-<p>Python based ATM system</p>
+        </div>
 
-</div>
+    </section>
 
-<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;backdrop-filter:blur(15px);text-align:center;">
+       <!-- ================= ABOUT SECTION ================= -->
 
-<h3>📚 Library Tracker</h3>
-<p>Book management system</p>
+    <section class="about" id="about">
 
-</div>
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>Get to know me better.</p>
+        </div>
 
-<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;backdrop-filter:blur(15px);text-align:center;">
+        <div class="about-container">
 
-<h3>📅 Period Tracker</h3>
-<p>My first GitHub project</p>
+            <div class="about-card">
 
-</div>
+                <h3>Hello! 💖</h3>
 
-<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;backdrop-filter:blur(15px);text-align:center;">
+                <p>
 
-<h3>🏦 Bank System</h3>
-<p>Advanced Python project</p>
+                    I'm <strong>Arohi</strong>, a passionate student who loves coding,
+                    designing beautiful websites and building real-world projects.
 
-</div>
+                </p>
 
-</div>
+                <p>
 
-</section>
+                    Currently I am learning Python, HTML, CSS and GitHub.
+                    My dream is to become a Software Engineer and work at Google.
 
+                </p>
 
-<section id="dreams" style="padding:120px 10%;">
+            </div>
 
-<h2 style="text-align:center;font-size:40px;color:#ff4fa2;font-family:'Pacifico',cursive;margin-bottom:50px;">
-My Dreams 🌸
-</h2>
+            <div class="about-stats">
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;">
+                <div class="stat-card">
 
-<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;text-align:center;backdrop-filter:blur(15px);">
+                    <h2>3+</h2>
 
-<h3>💻 Google</h3>
-<p>Become Software Engineer</p>
+                    <p>Projects</p>
 
-</div>
+                </div>
 
-<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;text-align:center;backdrop-filter:blur(15px);">
+                <div class="stat-card">
 
-<h3>🚀 Startup</h3>
-<p>Build my own company</p>
+                    <h2>100%</h2>
 
-</div>
+                    <p>Dedication</p>
 
-<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;text-align:center;backdrop-filter:blur(15px);">
+                </div>
 
-<h3>🏍 Bike</h3>
-<p>Buy dream bike</p>
+                <div class="stat-card">
 
-</div>
+                    <h2>2026</h2>
 
-<div style="background:rgba(255,255,255,.4);padding:30px;border-radius:25px;text-align:center;backdrop-filter:blur(15px);">
+                    <p>Started Coding</p>
 
-<h3>🌍 Travel</h3>
-<p>World tour</p>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
-<section id="contact" style="padding:120px 10%;text-align:center;">
 
-<h2 style="font-size:40px;color:#ff4fa2;font-family:'Pacifico',cursive;margin-bottom:30px;">
-Contact Me 💌
-</h2>
 
-<p style="font-size:18px;line-height:2;">
+    <!-- ================= SKILLS ================= -->
 
-Email: yourname@email.com <br><br>
+    <section class="skills" id="skills">
 
-GitHub: https://github.com/yourusername <br><br>
+        <div class="section-title">
 
-LinkedIn: coming soon ✨
+            <h2>Skills</h2>
 
-</p>
+            <p>Technologies I'm learning.</p>
 
-</section>
+        </div>
 
-<footer style="text-align:center;padding:40px;background:rgba(255,255,255,.4);backdrop-filter:blur(15px);margin-top:50px;">
+        <div class="skills-container">
 
-<p>
+            <div class="skill-card">
 
-Made with 💖 by Arohi | Keep learning, keep growing ✨
+                <span>🐍</span>
 
-</p>
+                <h3>Python</h3>
 
-</footer>
+            </div>
 
-<script>
+            <div class="skill-card">
 
-/* =========================
-   SIMPLE TEXT EFFECT
-========================= */
+                <span>🌐</span>
 
-const text = [
-"Future Software Engineer 👩‍💻",
-"Python Developer 🐍",
-"Startup Founder 🚀",
-"Dream Big ✨"
-];
+                <h3>HTML</h3>
 
-let i = 0;
+            </div>
 
-function changeText(){
+            <div class="skill-card">
 
-document.querySelector(".hero-box h2").innerText = text[i];
+                <span>🎨</span>
 
-i++;
+                <h3>CSS</h3>
 
-if(i >= text.length){
+            </div>
 
-i = 0;
+            <div class="skill-card">
 
-}
+                <span>💻</span>
 
-}
+                <h3>VS Code</h3>
 
-setInterval(changeText,2000);
+            </div>
 
-</script>
+            <div class="skill-card">
 
-</body>
+                <span>🌿</span>
 
-</html>
+                <h3>GitHub</h3>
+
+            </div>
+
+            <div class="skill-card">
+
+                <span>🧠</span>
+
+                <h3>Problem Solving</h3>
+
+            </div>
+
+        </div>
+
+    </section>
