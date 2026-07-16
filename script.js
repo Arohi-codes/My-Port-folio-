@@ -251,4 +251,232 @@ window.addEventListener("scroll",function(){
 
 });
 
+// ===============================
+// RANDOM QUOTES
+// ===============================
+
+const quotes = [
+
+    "Dream Big 💜",
+
+    "Never Stop Learning 🚀",
+
+    "Code. Learn. Repeat. 💻",
+
+    "Success Loves Consistency ⭐",
+
+    "Believe In Yourself 🌸"
+
+];
+
+const quote = document.getElementById("quote");
+
+const random = Math.floor(Math.random()*quotes.length);
+
+quote.innerHTML = quotes[random];
+
+// ===============================
+// LIVE CLOCK
+// ===============================
+
+const clock = document.getElementById("clock");
+
+setInterval(function(){
+
+    const now = new Date();
+
+    clock.innerHTML = now.toLocaleTimeString();
+
+},1000);
+
+// ===============================
+// DATE
+// ===============================
+
+const date = document.getElementById("date");
+
+const today = new Date();
+
+date.innerHTML = today.toDateString();
+
+// ===============================
+// WELCOME
+// ===============================
+
+window.addEventListener("load",function(){
+
+    document.body.style.opacity="1";
+
+});
+
+// ===============================
+// MOUSE POSITION
+// ===============================
+
+document.addEventListener("mousemove",function(event){
+
+    console.log(
+
+        event.clientX,
+
+        event.clientY
+
+    );
+
+});
+
+// ===============================
+// KEYBOARD
+// ===============================
+
+document.addEventListener("keydown",function(event){
+
+    if(event.key==="h"){
+
+        alert("Hello Arohi 💜");
+
+    }
+
+});
+
+// ===============================
+// SCROLL
+// ===============================
+
+window.addEventListener("scroll",function(){
+
+    const scroll =
+
+    window.scrollY;
+
+    console.log(scroll);
+
+});
+
+// ===============================
+// PAGE READY
+// ===============================
+
+console.log("Everything Loaded Successfully 🚀");
+
+// ===============================
+// LOADING SCREEN
+// ===============================
+
+window.addEventListener("load",function(){
+
+    const loader = document.getElementById("loader");
+
+    loader.style.display="none";
+
+});
+
+// ===============================
+// THEME SWITCH
+// ===============================
+
+const theme = document.getElementById("theme");
+
+theme.addEventListener("click",function(){
+
+    document.body.classList.toggle("dark");
+
+});
+
+// ===============================
+// PROGRESS BAR
+// ===============================
+
+window.addEventListener("scroll",function(){
+
+    let scroll = document.documentElement.scrollTop;
+
+    let height = document.documentElement.scrollHeight -
+
+    document.documentElement.clientHeight;
+
+    let progress = (scroll/height)*100;
+
+    document.getElementById("progress").style.width =
+
+    progress + "%";
+
+});
+
+// ===============================
+// REVEAL
+// ===============================
+
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll",function(){
+
+    sections.forEach(section=>{
+
+        const top = section.getBoundingClientRect().top;
+
+        if(top<window.innerHeight-120){
+
+            section.classList.add("visible");
+
+        }
+
+    });
+
+});
+
+// ===============================
+// RANDOM HERO COLOR
+// ===============================
+
+const colors=[
+
+"#faf5ff",
+
+"#fdf2f8",
+
+"#f3e8ff",
+
+"#eef2ff"
+
+];
+
+const randomColor=
+
+colors[Math.floor(Math.random()*colors.length)];
+
+document.querySelector(".hero").style.background=randomColor;
+
+// ===============================
+// GREETING
+// ===============================
+
+const hour=new Date().getHours();
+
+const greet=document.getElementById("greeting");
+
+if(hour<12){
+
+greet.innerHTML="Good Morning ☀️";
+
+}
+
+else if(hour<18){
+
+greet.innerHTML="Good Afternoon 🌸";
+
+}
+
+else{
+
+greet.innerHTML="Good Evening 🌙";
+
+}
+
+// ===============================
+// VISITOR
+// ===============================
+
+console.log("Thank you for visiting my portfolio 💜");
+
 
