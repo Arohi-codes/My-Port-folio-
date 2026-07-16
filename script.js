@@ -1,482 +1,614 @@
-// ===============================
-// PORTFOLIO LOADED
-// ===============================
-
-console.log("Portfolio Loaded Successfully 🚀");
-
-
-// ===============================
-// HERO TITLE
-// ===============================
-
-const heroTitle = document.getElementById("title");
-
-heroTitle.style.color = "#7c3aed";
+// ==========================================
+// PORTFOLIO SCRIPT
+// Part 1
+// ==========================================
 
 
-// ===============================
-// PROJECT BUTTON
-// ===============================
+// ==========================================
+// LOADER
+// ==========================================
 
-const projectBtn = document.getElementById("projectBtn");
+window.addEventListener("load", function () {
 
-projectBtn.addEventListener("click", function () {
+    const loader = document.getElementById("loader");
 
-    document.getElementById("projects").scrollIntoView({
+    setTimeout(function () {
 
-        behavior: "smooth"
+        loader.style.opacity = "0";
 
-    });
+        loader.style.pointerEvents = "none";
+
+        setTimeout(function () {
+
+            loader.style.display = "none";
+
+        }, 500);
+
+    }, 1000);
 
 });
 
 
-// ===============================
-// CONTACT BUTTON
-// ===============================
 
-const contactBtn = document.getElementById("contactBtn");
-
-contactBtn.addEventListener("click", function () {
-
-    document.getElementById("contact").scrollIntoView({
-
-        behavior: "smooth"
-
-    });
-
-});
-
-
-// ===============================
-// FOOTER YEAR
-// ===============================
-
-const year = new Date().getFullYear();
-
-document.getElementById("year").innerHTML =
-
-`© ${year} Arohi | All Rights Reserved`;
-
-// ===============================
-// NAVBAR ACTIVE LINK
-// ===============================
-
-const navLinks = document.querySelectorAll("nav a");
-
-navLinks.forEach(link => {
-
-    link.addEventListener("click", function () {
-
-        navLinks.forEach(item => {
-
-            item.classList.remove("active");
-
-        });
-
-        this.classList.add("active");
-
-    });
-
-});
-
-
-// ===============================
-// SCROLL TO TOP BUTTON
-// ===============================
-
-const topButton = document.getElementById("topBtn");
+// ==========================================
+// PROGRESS BAR
+// ==========================================
 
 window.addEventListener("scroll", function () {
 
-    if(window.scrollY > 300){
+    const scrollTop = document.documentElement.scrollTop;
 
-        topButton.style.display = "block";
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const percentage = (scrollTop / scrollHeight) * 100;
+
+    document.getElementById("progress").style.width =
+        percentage + "%";
+
+});
+
+
+
+
+// ==========================================
+// SCROLL TO TOP
+// ==========================================
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 300) {
+
+        topBtn.style.display = "block";
 
     }
 
-    else{
+    else {
 
-        topButton.style.display = "none";
+        topBtn.style.display = "none";
 
     }
 
 });
 
-topButton.addEventListener("click", function(){
+topBtn.addEventListener("click", function () {
 
     window.scrollTo({
 
-        top:0,
+        top: 0,
 
-        behavior:"smooth"
-
-    });
-
-});
-
-
-// ===============================
-// HERO BUTTON HOVER
-// ===============================
-
-const buttons = document.querySelectorAll("button");
-
-buttons.forEach(button => {
-
-    button.addEventListener("mouseover", function(){
-
-        this.style.transform = "scale(1.05)";
-
-    });
-
-    button.addEventListener("mouseout", function(){
-
-        this.style.transform = "scale(1)";
+        behavior: "smooth"
 
     });
 
 });
 
 
-// ===============================
-// WELCOME MESSAGE
-// ===============================
 
-window.onload = function(){
 
-    console.log("Welcome to Arohi's Portfolio 💜");
-
-};
-
-// ===============================
+// ==========================================
 // TYPING EFFECT
-// ===============================
+// ==========================================
 
-const text = [
+const typingText = [
 
     "Future Software Engineer 💜",
-
-    "Future Startup Founder 🚀",
 
     "Python Developer 🐍",
 
     "Web Developer 🌐",
 
+    "Startup Founder 🚀",
+
     "Dream Chaser ✨"
 
 ];
 
-let index = 0;
+let typingIndex = 0;
 
 const typing = document.getElementById("typing");
 
-setInterval(function(){
+function changeText() {
 
-    typing.innerHTML = text[index];
+    typing.textContent = typingText[typingIndex];
 
-    index++;
+    typingIndex++;
 
-    if(index >= text.length){
+    if (typingIndex >= typingText.length) {
 
-        index = 0;
+        typingIndex = 0;
 
     }
 
-},2000);
+}
 
-// ===============================
-// DARK MODE
-// ===============================
+changeText();
 
-const modeBtn = document.getElementById("modeBtn");
+setInterval(changeText, 2500);
 
-modeBtn.addEventListener("click",function(){
 
-    document.body.classList.toggle("dark");
 
-});
 
-// ===============================
-// COUNTER
-// ===============================
+// ==========================================
+// GREETING
+// ==========================================
 
-const counters = document.querySelectorAll(".counter");
+const greeting = document.getElementById("greeting");
 
-counters.forEach(counter=>{
+const hour = new Date().getHours();
 
-    let count = 0;
+if (hour < 12) {
 
-    const target = Number(counter.innerHTML);
+    greeting.textContent = "☀️ Good Morning";
 
-    counter.innerHTML = 0;
+}
 
-    const timer = setInterval(function(){
+else if (hour < 18) {
 
-        count++;
+    greeting.textContent = "🌸 Good Afternoon";
 
-        counter.innerHTML = count;
+}
 
-        if(count >= target){
+else {
 
-            clearInterval(timer);
+    greeting.textContent = "🌙 Good Evening";
 
-        }
+}
 
-    },30);
 
-});
 
-// ===============================
-// SCROLL ANIMATION
-// ===============================
 
-const cards = document.querySelectorAll(".card");
-
-window.addEventListener("scroll",function(){
-
-    cards.forEach(card=>{
-
-        const position = card.getBoundingClientRect().top;
-
-        const screen = window.innerHeight;
-
-        if(position < screen-100){
-
-            card.classList.add("show");
-
-        }
-
-    });
-
-});
-
-// ===============================
-// RANDOM QUOTES
-// ===============================
-
-const quotes = [
-
-    "Dream Big 💜",
-
-    "Never Stop Learning 🚀",
-
-    "Code. Learn. Repeat. 💻",
-
-    "Success Loves Consistency ⭐",
-
-    "Believe In Yourself 🌸"
-
-];
-
-const quote = document.getElementById("quote");
-
-const random = Math.floor(Math.random()*quotes.length);
-
-quote.innerHTML = quotes[random];
-
-// ===============================
+// ==========================================
 // LIVE CLOCK
-// ===============================
+// ==========================================
 
 const clock = document.getElementById("clock");
 
-setInterval(function(){
+function updateClock() {
 
     const now = new Date();
 
-    clock.innerHTML = now.toLocaleTimeString();
+    clock.textContent = now.toLocaleTimeString();
 
-},1000);
+}
 
-// ===============================
-// DATE
-// ===============================
+updateClock();
+
+setInterval(updateClock, 1000);
+
+
+
+
+// ==========================================
+// CURRENT DATE
+// ==========================================
 
 const date = document.getElementById("date");
 
 const today = new Date();
 
-date.innerHTML = today.toDateString();
+date.textContent = today.toDateString();
 
-// ===============================
-// WELCOME
-// ===============================
 
-window.addEventListener("load",function(){
 
-    document.body.style.opacity="1";
 
-});
+// ==========================================
+// RANDOM QUOTES
+// ==========================================
 
-// ===============================
-// MOUSE POSITION
-// ===============================
+const quotes = [
 
-document.addEventListener("mousemove",function(event){
+    "Dream Big. Start Small. 💜",
 
-    console.log(
+    "Consistency Beats Talent. 🚀",
 
-        event.clientX,
+    "Keep Coding Every Day. 💻",
 
-        event.clientY
+    "Believe In Yourself. 🌸",
 
-    );
+    "Small Steps Lead To Big Success. ⭐"
 
-});
+];
 
-// ===============================
-// KEYBOARD
-// ===============================
+const randomQuote =
 
-document.addEventListener("keydown",function(event){
+quotes[Math.floor(Math.random() * quotes.length)];
 
-    if(event.key==="h"){
+document.getElementById("quote").textContent = randomQuote;
 
-        alert("Hello Arohi 💜");
 
-    }
 
-});
 
-// ===============================
-// SCROLL
-// ===============================
+// ==========================================
+// HERO BUTTONS
+// ==========================================
 
-window.addEventListener("scroll",function(){
+document.getElementById("projectBtn")
 
-    const scroll =
+.addEventListener("click", function () {
 
-    window.scrollY;
+    document.getElementById("projects")
 
-    console.log(scroll);
+    .scrollIntoView({
 
-});
-
-// ===============================
-// PAGE READY
-// ===============================
-
-console.log("Everything Loaded Successfully 🚀");
-
-// ===============================
-// LOADING SCREEN
-// ===============================
-
-window.addEventListener("load",function(){
-
-    const loader = document.getElementById("loader");
-
-    loader.style.display="none";
-
-});
-
-// ===============================
-// THEME SWITCH
-// ===============================
-
-const theme = document.getElementById("theme");
-
-theme.addEventListener("click",function(){
-
-    document.body.classList.toggle("dark");
-
-});
-
-// ===============================
-// PROGRESS BAR
-// ===============================
-
-window.addEventListener("scroll",function(){
-
-    let scroll = document.documentElement.scrollTop;
-
-    let height = document.documentElement.scrollHeight -
-
-    document.documentElement.clientHeight;
-
-    let progress = (scroll/height)*100;
-
-    document.getElementById("progress").style.width =
-
-    progress + "%";
-
-});
-
-// ===============================
-// REVEAL
-// ===============================
-
-const sections = document.querySelectorAll("section");
-
-window.addEventListener("scroll",function(){
-
-    sections.forEach(section=>{
-
-        const top = section.getBoundingClientRect().top;
-
-        if(top<window.innerHeight-120){
-
-            section.classList.add("visible");
-
-        }
+        behavior: "smooth"
 
     });
 
 });
 
-// ===============================
-// RANDOM HERO COLOR
-// ===============================
 
-const colors=[
 
-"#faf5ff",
+document.getElementById("contactBtn")
 
-"#fdf2f8",
+.addEventListener("click", function () {
 
-"#f3e8ff",
+    document.getElementById("contact")
 
-"#eef2ff"
+    .scrollIntoView({
+
+        behavior: "smooth"
+
+    });
+
+});
+
+// ==========================================
+// DARK MODE
+// ==========================================
+
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", function () {
+
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+
+        themeBtn.textContent = "☀️";
+
+    }
+
+    else {
+
+        themeBtn.textContent = "🌙";
+
+    }
+
+});
+
+
+
+
+// ==========================================
+// ANIMATED COUNTERS
+// ==========================================
+
+const counters = document.querySelectorAll(".counter");
+
+const speed = 60;
+
+counters.forEach(function(counter){
+
+    const target = Number(counter.innerText);
+
+    let count = 0;
+
+    counter.innerText = "0";
+
+    const updateCounter = function(){
+
+        count++;
+
+        counter.innerText = count;
+
+        if(count < target){
+
+            setTimeout(updateCounter, speed);
+
+        }
+
+    };
+
+    updateCounter();
+
+});
+
+
+
+
+// ==========================================
+// REVEAL ON SCROLL
+// ==========================================
+
+const cards = document.querySelectorAll(".card");
+
+function revealCards(){
+
+    cards.forEach(function(card){
+
+        const position = card.getBoundingClientRect().top;
+
+        const screen = window.innerHeight;
+
+        if(position < screen - 100){
+
+            card.style.opacity = "1";
+
+            card.style.transform = "translateY(0)";
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", revealCards);
+
+revealCards();
+
+
+
+
+// ==========================================
+// NAVBAR ACTIVE LINK
+// ==========================================
+
+const navLinks = document.querySelectorAll(".nav-links a");
+
+navLinks.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        navLinks.forEach(function(item){
+
+            item.style.color = "#444";
+
+        });
+
+        this.style.color = "#7c3aed";
+
+    });
+
+});
+
+
+
+
+// ==========================================
+// CONTACT FORM
+// ==========================================
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    alert("💜 Thank you! Your message has been received.");
+
+    form.reset();
+
+});
+
+
+
+
+// ==========================================
+// FOOTER YEAR
+// ==========================================
+
+const year = document.getElementById("year");
+
+const currentYear = new Date().getFullYear();
+
+year.innerHTML =
+
+"© " + currentYear + " Arohi | All Rights Reserved";
+
+
+
+
+// ==========================================
+// HERO TITLE ANIMATION
+// ==========================================
+
+const title = document.getElementById("title");
+
+title.style.opacity = "0";
+
+title.style.transform = "translateY(30px)";
+
+setTimeout(function(){
+
+    title.style.transition = "1s";
+
+    title.style.opacity = "1";
+
+    title.style.transform = "translateY(0)";
+
+},300);
+
+// ==========================================
+// SMOOTH SECTION FADE
+// ==========================================
+
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(function(entries){
+
+    entries.forEach(function(entry){
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity = "1";
+
+            entry.target.style.transform = "translateY(0)";
+
+        }
+
+    });
+
+},{
+    threshold:0.2
+});
+
+sections.forEach(function(section){
+
+    section.style.opacity = "0";
+
+    section.style.transform = "translateY(40px)";
+
+    section.style.transition = "0.8s";
+
+    observer.observe(section);
+
+});
+
+
+
+
+// ==========================================
+// BUTTON RIPPLE EFFECT
+// ==========================================
+
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach(function(button){
+
+    button.addEventListener("click",function(){
+
+        button.style.transform = "scale(.95)";
+
+        setTimeout(function(){
+
+            button.style.transform = "scale(1)";
+
+        },150);
+
+    });
+
+});
+
+
+
+
+// ==========================================
+// RANDOM CONSOLE MESSAGE
+// ==========================================
+
+const messages = [
+
+    "Keep Coding 💜",
+
+    "One Day You'll Build Something Amazing 🚀",
+
+    "Believe In Yourself ⭐",
+
+    "Dream • Code • Repeat 💻",
+
+    "Future CEO Loading... 👑"
 
 ];
 
-const randomColor=
+console.log(
 
-colors[Math.floor(Math.random()*colors.length)];
+messages[Math.floor(Math.random()*messages.length)]
 
-document.querySelector(".hero").style.background=randomColor;
+);
 
-// ===============================
-// GREETING
-// ===============================
 
-const hour=new Date().getHours();
 
-const greet=document.getElementById("greeting");
 
-if(hour<12){
+// ==========================================
+// KEYBOARD SHORTCUT
+// Press H → Home
+// ==========================================
 
-greet.innerHTML="Good Morning ☀️";
+document.addEventListener("keydown",function(event){
 
-}
+    if(event.key==="h" || event.key==="H"){
 
-else if(hour<18){
+        document.getElementById("home")
 
-greet.innerHTML="Good Afternoon 🌸";
+        .scrollIntoView({
 
-}
+            behavior:"smooth"
 
-else{
+        });
 
-greet.innerHTML="Good Evening 🌙";
+    }
 
-}
+});
 
-// ===============================
-// VISITOR
-// ===============================
 
-console.log("Thank you for visiting my portfolio 💜");
 
+
+// ==========================================
+// IMAGE SAFETY
+// ==========================================
+
+document.querySelectorAll("img").forEach(function(img){
+
+    img.draggable=false;
+
+});
+
+
+
+
+// ==========================================
+// PAGE TITLE
+// ==========================================
+
+document.addEventListener("visibilitychange",function(){
+
+    if(document.hidden){
+
+        document.title="Come Back Soon 💜";
+
+    }
+
+    else{
+
+        document.title="Arohi | Portfolio";
+
+    }
+
+});
+
+// ==========================================
+// DOUBLE CLICK
+// ==========================================
+
+document.body.addEventListener("dblclick",function(){
+
+    console.log("Double Click Detected ✨");
+
+});
+
+// ==========================================
+// PAGE READY
+// ==========================================
+
+console.log("Everything Loaded Successfully ✅");
+
+console.log("Portfolio Version 1.0 💜");
+
+
+// ==========================================
+// WELCOME MESSAGE
+// ==========================================
+
+console.log("Welcome To Arohi's Portfolio 💜");
+
+
+// ==========================================
+// CONSOLE MESSAGE
+// ==========================================
+
+console.log("Portfolio Loaded Successfully 🚀");
 
