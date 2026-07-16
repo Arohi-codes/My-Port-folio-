@@ -1,49 +1,150 @@
+// ===============================
+// PORTFOLIO LOADED
+// ===============================
+
 console.log("Portfolio Loaded Successfully 🚀");
 
-alert("Welcome to Arohi's Portfolio 💜");
 
-let name = "Arohi";
+// ===============================
+// HERO TITLE
+// ===============================
 
-console.log(name);
+const heroTitle = document.getElementById("title");
 
-let projectButton = document.getElementById("projectBtn");
+heroTitle.style.color = "#7c3aed";
 
-projectButton.onclick = function(){
 
-    alert("Projects section is coming soon 🚀");
+// ===============================
+// PROJECT BUTTON
+// ===============================
 
-}
+const projectBtn = document.getElementById("projectBtn");
 
-let contactButton = document.getElementById("contactBtn");
+projectBtn.addEventListener("click", function () {
 
-contactButton.onclick = function(){
+    document.getElementById("projects").scrollIntoView({
 
-    alert("Thank you for visiting my portfolio 💜");
+        behavior: "smooth"
 
-}
+    });
 
-let heading = document.getElementById("title");
+});
 
-heading.innerHTML = "Welcome To My Portfolio 💜";
 
-heading.style.color = "#7c3aed";
+// ===============================
+// CONTACT BUTTON
+// ===============================
 
-document.body.style.background = "#ffffff";
+const contactBtn = document.getElementById("contactBtn");
 
-heading.onmouseover = function(){
+contactBtn.addEventListener("click", function () {
 
-    heading.style.color = "deeppink";
+    document.getElementById("contact").scrollIntoView({
 
-}
+        behavior: "smooth"
 
-heading.onmouseout = function(){
+    });
 
-    heading.style.color = "#7c3aed";
+});
 
-}
 
-let currentYear = new Date().getFullYear();
+// ===============================
+// FOOTER YEAR
+// ===============================
+
+const year = new Date().getFullYear();
 
 document.getElementById("year").innerHTML =
 
-"© " + currentYear + " Arohi";
+`© ${year} Arohi | All Rights Reserved`;
+
+// ===============================
+// NAVBAR ACTIVE LINK
+// ===============================
+
+const navLinks = document.querySelectorAll("nav a");
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", function () {
+
+        navLinks.forEach(item => {
+
+            item.classList.remove("active");
+
+        });
+
+        this.classList.add("active");
+
+    });
+
+});
+
+
+// ===============================
+// SCROLL TO TOP BUTTON
+// ===============================
+
+const topButton = document.getElementById("topBtn");
+
+window.addEventListener("scroll", function () {
+
+    if(window.scrollY > 300){
+
+        topButton.style.display = "block";
+
+    }
+
+    else{
+
+        topButton.style.display = "none";
+
+    }
+
+});
+
+topButton.addEventListener("click", function(){
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+});
+
+
+// ===============================
+// HERO BUTTON HOVER
+// ===============================
+
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach(button => {
+
+    button.addEventListener("mouseover", function(){
+
+        this.style.transform = "scale(1.05)";
+
+    });
+
+    button.addEventListener("mouseout", function(){
+
+        this.style.transform = "scale(1)";
+
+    });
+
+});
+
+
+// ===============================
+// WELCOME MESSAGE
+// ===============================
+
+window.onload = function(){
+
+    console.log("Welcome to Arohi's Portfolio 💜");
+
+};
