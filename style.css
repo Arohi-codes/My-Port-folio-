@@ -1,37 +1,61 @@
-/* ===============================
-   GOOGLE FONT
-================================ */
+/* ==========================================
+            GOOGLE FONT
+========================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* ===============================
-   RESET
-================================ */
+
+/* ==========================================
+            RESET
+========================================== */
 
 *{
+
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
+
     font-family:'Poppins',sans-serif;
+
+    scroll-behavior:smooth;
+
 }
 
-/* ===============================
-   BODY
-================================ */
+
+/* ==========================================
+            BODY
+========================================== */
 
 body{
 
-    background:#ffffff;
+    background:linear-gradient(to bottom,#ffffff,#fcfaff,#f4efff);
 
     color:#333;
 
-    line-height:1.6;
+    overflow-x:hidden;
 
 }
 
-.hero{
 
-    min-height:100vh;
+/* ==========================================
+            LOADER
+========================================== */
+
+#loader{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100vh;
+
+    background:white;
 
     display:flex;
 
@@ -39,83 +63,94 @@ body{
 
     align-items:center;
 
-    text-align:center;
-
-    background:linear-gradient(135deg,#ffffff,#fce7f3,#ede9fe);
-
-    padding:80px;
+    z-index:99999;
 
 }
 
-.hero-content{
-
-    max-width:700px;
-
-}
-
-.hero h1{
-
-    font-size:60px;
+#loader h1{
 
     color:#7c3aed;
 
-}
-
-.hero h2{
-
-    margin-top:15px;
-
-    font-size:30px;
-
-    color:#555;
+    font-size:35px;
 
 }
 
-.hero p{
 
-    margin-top:25px;
+/* ==========================================
+            PROGRESS BAR
+========================================== */
 
-    font-size:18px;
+#progress{
 
-    color:#666;
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:0;
+
+    height:5px;
+
+    background:#8b5cf6;
+
+    z-index:9999;
 
 }
 
-.hero button{
 
-    margin-top:35px;
+/* ==========================================
+            SCROLL BUTTON
+========================================== */
 
-    margin-right:15px;
+#topBtn{
 
-    padding:15px 35px;
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    width:55px;
+
+    height:55px;
 
     border:none;
 
-    border-radius:30px;
+    border-radius:50%;
 
-    cursor:pointer;
-
-    background:#c4b5fd;
+    background:#8b5cf6;
 
     color:white;
 
-    font-size:16px;
+    cursor:pointer;
 
-    transition:0.3s;
+    display:none;
+
+    font-size:20px;
+
+    box-shadow:0 15px 30px rgba(124,58,237,.25);
+
+    transition:.3s;
+
+    z-index:999;
 
 }
 
-.hero button:hover{
+#topBtn:hover{
 
-    background:#7c3aed;
+    transform:translateY(-6px);
 
-    transform:translateY(-5px);
+    background:#6d28d9;
 
 }
 
-/* ================= NAVBAR ================= */
 
-nav{
+/* ==========================================
+            NAVBAR
+========================================== */
+
+.navbar{
 
     width:100%;
 
@@ -127,29 +162,29 @@ nav{
 
     padding:20px 10%;
 
-    background:white;
-
     position:fixed;
 
     top:0;
 
     left:0;
 
-    z-index:1000;
+    background:rgba(255,255,255,.8);
 
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    backdrop-filter:blur(20px);
+
+    z-index:999;
 
 }
 
-.logo{
+.logo h2{
 
     color:#7c3aed;
 
-    font-size:30px;
+    font-size:32px;
 
 }
 
-nav ul{
+.nav-links{
 
     display:flex;
 
@@ -159,11 +194,11 @@ nav ul{
 
 }
 
-nav ul li a{
+.nav-links a{
 
     text-decoration:none;
 
-    color:#555;
+    color:#444;
 
     font-weight:600;
 
@@ -171,688 +206,21 @@ nav ul li a{
 
 }
 
-nav ul li a:hover{
+.nav-links a:hover{
 
     color:#7c3aed;
 
 }
 
-/* ================= ABOUT ================= */
+#themeBtn{
 
-.about{
+    width:50px;
 
-    padding:100px 10%;
-
-    background:#ffffff;
-
-}
-
-.about h2{
-
-    text-align:center;
-
-    font-size:40px;
-
-    color:#7c3aed;
-
-    margin-bottom:40px;
-
-}
-
-.about-text{
-
-    background:#fdf8ff;
-
-    padding:40px;
-
-    border-radius:25px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-}
-
-.about-text h3{
-
-    margin-bottom:20px;
-
-}
-
-.about-text p{
-
-    margin-bottom:15px;
-
-    color:#555;
-
-}
-
-/* ================= SKILLS ================= */
-
-.skills{
-
-    padding:100px 10%;
-
-    background:#faf5ff;
-
-}
-
-.skills h2{
-
-    text-align:center;
-
-    color:#7c3aed;
-
-    font-size:40px;
-
-    margin-bottom:50px;
-
-}
-
-.skills-container{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:30px;
-
-}
-
-.skill-card{
-
-    width:220px;
-
-    background:white;
-
-    padding:35px;
-
-    text-align:center;
-
-    border-radius:20px;
-
-    box-shadow:0 10px 20px rgba(0,0,0,.08);
-
-    transition:.4s;
-
-    font-size:22px;
-
-}
-
-.skill-card:hover{
-
-    transform:translateY(-10px);
-
-    background:#ede9fe;
-
-}
-
-.achievement-container{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:30px;
-
-}
-
-.achievement-card{
-
-    width:280px;
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    box-shadow:0 10px 20px rgba(0,0,0,.08);
-
-    transition:.3s;
-
-}
-
-.achievement-card:hover{
-
-    transform:scale(1.05);
-
-}
-
-.project-container{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:30px;
-
-}
-
-.project-card{
-
-    width:300px;
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:25px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-    transition:.3s;
-
-}
-
-.project-card:hover{
-
-    transform:translateY(-10px);
-
-}
-
-/* ================= ACHIEVEMENTS ================= */
-
-.achievements{
-
-    padding:100px 10%;
-
-    background:#ffffff;
-
-}
-
-.achievements h2{
-
-    text-align:center;
-
-    color:#7c3aed;
-
-    font-size:40px;
-
-    margin-bottom:50px;
-
-}
-
-/* ================= PROJECTS ================= */
-
-.projects{
-
-    padding:100px 10%;
-
-    background:#faf5ff;
-
-}
-
-.projects h2{
-
-    text-align:center;
-
-    color:#7c3aed;
-
-    font-size:40px;
-
-    margin-bottom:50px;
-
-}
-
-.project-card h3{
-
-    margin-bottom:15px;
-
-    color:#7c3aed;
-
-}
-
-.project-card p{
-
-    color:#555;
-
-    margin-bottom:20px;
-
-}
-
-/* ================= JOURNEY ================= */
-
-.journey{
-
-    padding:100px 10%;
-
-    background:white;
-
-}
-
-.journey h2{
-
-    text-align:center;
-
-    color:#7c3aed;
-
-    margin-bottom:40px;
-
-    font-size:40px;
-
-}
-
-.journey ul{
-
-    max-width:700px;
-
-    margin:auto;
-
-}
-
-.journey ul li{
-
-    margin:20px 0;
-
-    font-size:18px;
-
-}
-
-/* ================= GOALS ================= */
-
-.goals{
-
-    padding:100px 10%;
-
-    background:#faf5ff;
-
-}
-
-.goals h2{
-
-    text-align:center;
-
-    color:#7c3aed;
-
-    font-size:40px;
-
-    margin-bottom:40px;
-
-}
-
-.goals ul{
-
-    max-width:600px;
-
-    margin:auto;
-
-}
-
-.goals li{
-
-    margin:20px 0;
-
-    font-size:18px;
-
-}
-
-/* ================= CONTACT ================= */
-
-.contact{
-
-    padding:100px 10%;
-
-    background:white;
-
-    text-align:center;
-
-}
-
-.contact h2{
-
-    color:#7c3aed;
-
-    margin-bottom:25px;
-
-    font-size:40px;
-
-}
-
-.contact p{
-
-    margin-bottom:20px;
-
-}
-
-.contact button{
-
-    margin:15px;
-
-    padding:15px 35px;
+    height:50px;
 
     border:none;
 
-    border-radius:30px;
-
-    background:#c4b5fd;
-
-    color:white;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-.contact button:hover{
-
-    background:#7c3aed;
-
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-
-    padding:40px;
-
-    background:#ede9fe;
-
-    text-align:center;
-
-}
-
-footer p{
-
-    margin:10px;
-
-}
-
-html{
-
-    scroll-behavior:smooth;
-
-}
-
-::selection{
-
-    background:#c4b5fd;
-
-    color:white;
-
-}
-
-::-webkit-scrollbar{
-
-    width:10px;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:#c4b5fd;
-
-    border-radius:20px;
-
-}
-
-/* ================= STATS ================= */
-
-.stats{
-
-    padding:100px 10%;
-
-    background:#ffffff;
-
-}
-
-.stats h2{
-
-    text-align:center;
-
-    color:#7c3aed;
-
-    margin-bottom:60px;
-
-    font-size:40px;
-
-}
-
-.stats-container{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:30px;
-
-    flex-wrap:wrap;
-
-}
-
-.stat-card{
-
-    width:220px;
-
-    padding:40px;
-
-    text-align:center;
-
-    border-radius:20px;
-
-    background:#faf5ff;
-
-    box-shadow:0 10px 20px rgba(0,0,0,.08);
-
-    transition:.4s;
-
-}
-
-.stat-card:hover{
-
-    transform:translateY(-10px);
-
-}
-
-.stat-card h1{
-
-    color:#7c3aed;
-
-    font-size:50px;
-
-}
-
-.stat-card p{
-
-    margin-top:15px;
-
-}
-
-.technology{
-
-    padding:100px 10%;
-
-    background:#faf5ff;
-
-}
-
-.technology h2{
-
-    text-align:center;
-
-    color:#7c3aed;
-
-    margin-bottom:50px;
-
-}
-
-.tech-container{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:25px;
-
-    flex-wrap:wrap;
-
-}
-
-.tech-card{
-
-    background:white;
-
-    padding:25px 40px;
-
-    border-radius:20px;
-
-    font-size:22px;
-
-    transition:.3s;
-
-}
-
-.tech-card:hover{
-
-    background:#ede9fe;
-
-}
-
-.quote{
-
-    padding:120px;
-
-    text-align:center;
-
-    background:white;
-
-}
-
-.quote h2{
-
-    color:#7c3aed;
-
-    margin-bottom:30px;
-
-}
-
-.quote p{
-
-    font-size:28px;
-
-    font-style:italic;
-
-    color:#666;
-
-}
-
-/* ===============================
-   UNIVERSAL CARDS
-================================ */
-
-.about-card,
-.learning-card,
-.skill-card,
-.project-card,
-.stat-card,
-.featured-card,
-.service-card,
-.education-card{
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:30px;
-
-    box-shadow:0 15px 35px rgba(124,58,237,.12);
-
-    transition:.4s;
-
-}
-
-.about-card:hover,
-.learning-card:hover,
-.skill-card:hover,
-.project-card:hover,
-.stat-card:hover,
-.featured-card:hover,
-.service-card:hover,
-.education-card:hover{
-
-    transform:translateY(-10px);
-
-    box-shadow:0 25px 45px rgba(124,58,237,.18);
-
-}
-
-section h2{
-
-    font-size:42px;
-
-    text-align:center;
-
-    margin-bottom:50px;
-
-    color:#7c3aed;
-
-}
-
-section p{
-
-    color:#666;
-
-    font-size:18px;
-
-}
-
-section{
-
-    padding:100px 10%;
-
-}
-
-.skills,
-.projects,
-.learning,
-.future-projects,
-.services,
-.goals,
-.fun{
-
-    background:#faf5ff;
-
-}
-
-.about,
-.statistics,
-.featured,
-.contact,
-.quote,
-.journey,
-.routine,
-.vision{
-
-    background:white;
-
-}
-
-ul{
-
-    list-style:none;
-
-}
-
-ul li{
-
-    margin:15px 0;
-
-    font-size:18px;
-
-}
-
-button{
-
-    padding:15px 35px;
-
-    border:none;
-
-    border-radius:50px;
+    border-radius:50%;
 
     background:#8b5cf6;
 
@@ -864,119 +232,410 @@ button{
 
 }
 
-button:hover{
+#themeBtn:hover{
+
+    transform:rotate(180deg);
+
+}
+
+
+/* ==========================================
+            HERO
+========================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:140px 10% 80px;
+
+    gap:60px;
+
+}
+
+.hero-content{
+
+    flex:1;
+
+}
+
+.hero-content h1{
+
+    font-size:65px;
+
+    margin-bottom:20px;
+
+}
+
+.hero-content span{
+
+    color:#7c3aed;
+
+}
+
+#typing{
+
+    color:#ec4899;
+
+    font-size:28px;
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+}
+
+.hero-content p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#666;
+
+    margin-bottom:35px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.hero-buttons button{
+
+    padding:16px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    background:#8b5cf6;
+
+    color:white;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+.hero-buttons button:hover{
+
+    transform:translateY(-6px);
 
     background:#6d28d9;
 
-    transform:translateY(-5px);
+}
+
+
+/* ==========================================
+            HERO CARD
+========================================== */
+
+.hero-card{
+
+    width:380px;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:0 20px 45px rgba(124,58,237,.15);
 
 }
 
-/* ===============================
-   CONTAINER
-================================ */
+.hero-card h2{
 
-.container{
+    color:#7c3aed;
 
-    width:90%;
-
-    max-width:1200px;
-
-    margin:auto;
+    margin-bottom:25px;
 
 }
 
-/* ===============================
-   GRID LAYOUT
-================================ */
+.hero-card h3{
 
-.grid{
+    margin-top:20px;
 
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-    gap:30px;
+    color:#444;
 
 }
 
-/* ===============================
-   CARD
-================================ */
+.hero-card p{
+
+    color:#666;
+
+    margin-top:8px;
+
+    line-height:1.6;
+
+}
+
+/* ==========================================
+            COMMON SECTION
+========================================== */
+
+section{
+
+    padding:100px 10%;
+
+}
+
+section h2{
+
+    text-align:center;
+
+    font-size:42px;
+
+    color:#7c3aed;
+
+    margin-bottom:60px;
+
+}
+
+
+/* ==========================================
+            CARD
+========================================== */
 
 .card{
 
     background:white;
 
-    border-radius:20px;
+    border-radius:25px;
 
     padding:30px;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    box-shadow:0 15px 35px rgba(124,58,237,.12);
 
-    transition:.3s;
+    transition:.4s;
 
 }
 
 .card:hover{
 
-    transform:translateY(-8px);
+    transform:translateY(-10px);
 
-    box-shadow:0 20px 40px rgba(124,58,237,.15);
+    box-shadow:0 25px 50px rgba(124,58,237,.18);
 
 }
 
-/* ===============================
-   LINKS
-================================ */
-
-a{
-
-    text-decoration:none;
+.card h3{
 
     color:#7c3aed;
 
-    transition:.3s;
+    margin-bottom:18px;
+
+    font-size:24px;
 
 }
 
-a:hover{
+.card p{
 
-    color:#5b21b6;
+    color:#666;
 
-}
-
-h1{
-
-    font-size:60px;
+    line-height:1.8;
 
 }
 
-h2{
+.card ul{
 
-    font-size:40px;
+    margin-left:20px;
 
-}
-
-h3{
-
-    font-size:26px;
+    color:#555;
 
 }
 
-p{
+.card li{
+
+    margin:12px 0;
+
+}
+
+
+/* ==========================================
+            ABOUT
+========================================== */
+
+.about-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+/* ==========================================
+            CURRENT LEARNING
+========================================== */
+
+.learning{
+
+    background:#faf7ff;
+
+}
+
+.learning-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.learning .card{
+
+    text-align:center;
+
+}
+
+
+/* ==========================================
+            SKILLS
+========================================== */
+
+.skills-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.skills .card{
+
+    padding:35px;
+
+}
+
+.skills progress{
+
+    width:100%;
+
+    height:14px;
+
+    margin-top:20px;
+
+    border-radius:20px;
+
+}
+
+.skills progress::-webkit-progress-bar{
+
+    background:#ececec;
+
+    border-radius:20px;
+
+}
+
+.skills progress::-webkit-progress-value{
+
+    background:linear-gradient(90deg,#8b5cf6,#ec4899);
+
+    border-radius:20px;
+
+}
+
+
+/* ==========================================
+            MILESTONES
+========================================== */
+
+.milestone-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.milestones{
+
+    background:#faf7ff;
+
+}
+
+.milestones .card{
+
+    text-align:center;
+
+}
+
+.counter{
+
+    font-size:55px;
+
+    color:#7c3aed;
+
+    margin-bottom:15px;
+
+}
+
+.milestones p{
 
     font-size:18px;
 
-}
-
-.hero{
-
-    animation:fadeIn 1s ease;
+    font-weight:500;
 
 }
 
-@keyframes fadeIn{
+
+/* ==========================================
+            HOVER EFFECT
+========================================== */
+
+.about .card:hover,
+
+.learning .card:hover,
+
+.skills .card:hover,
+
+.milestones .card:hover{
+
+    border:2px solid #d8b4fe;
+
+}
+
+
+/* ==========================================
+            SECTION ANIMATION
+========================================== */
+
+.about,
+
+.learning,
+
+.skills,
+
+.milestones{
+
+    animation:fadeUp 1s ease;
+
+}
+
+@keyframes fadeUp{
 
     from{
 
@@ -996,223 +655,608 @@ p{
 
 }
 
-.card{
+/* ==========================================
+            FEATURED PROJECT
+========================================== */
 
-    animation:appear 1s ease;
+.featured{
 
-}
-
-@keyframes appear{
-
-    from{
-
-        opacity:0;
-
-        transform:scale(.9);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:scale(1);
-
-    }
+    background:#faf7ff;
 
 }
 
-footer{
+.featured .card{
+
+    max-width:900px;
+
+    margin:auto;
 
     text-align:center;
 
+    padding:50px;
+
+}
+
+.featured h3{
+
+    font-size:32px;
+
+    margin-bottom:20px;
+
+}
+
+.featured p{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+
+
+/* ==========================================
+            PROJECTS
+========================================== */
+
+.projects-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.projects .card{
+
+    min-height:320px;
+
+}
+
+.projects ul{
+
+    margin-top:20px;
+
+}
+
+.projects li{
+
+    margin-bottom:15px;
+
+}
+
+
+/* ==========================================
+            CODING JOURNEY
+========================================== */
+
+.journey{
+
+    background:#faf7ff;
+
+}
+
+.journey .card{
+
+    max-width:950px;
+
+    margin:auto;
+
+    padding:45px;
+
+}
+
+.journey p{
+
+    font-size:18px;
+
+    text-align:center;
+
+    line-height:2;
+
+}
+
+
+/* ==========================================
+            GOALS
+========================================== */
+
+.goals-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+}
+
+.goals .card{
+
     padding:40px;
 
-    background:#ede9fe;
-
 }
 
-footer p{
-
-    color:#555;
-
-}
-
-@media(max-width:768px){
-
-    h1{
-
-        font-size:40px;
-
-    }
-
-    h2{
-
-        font-size:30px;
-
-    }
-
-    nav{
-
-        flex-direction:column;
-
-        gap:20px;
-
-    }
-
-    nav ul{
-
-        flex-direction:column;
-
-        text-align:center;
-
-    }
-
-}
-
-/* ===============================
-   GRADIENT TEXT
-================================ */
-
-.gradient-text{
-
-    background:linear-gradient(90deg,#7c3aed,#ec4899);
-
-    -webkit-background-clip:text;
-
-    -webkit-text-fill-color:transparent;
-
-}
-
-/* ===============================
-   GLASS EFFECT
-================================ */
-
-.glass{
-
-    background:rgba(255,255,255,.6);
-
-    backdrop-filter:blur(15px);
-
-    border:1px solid rgba(255,255,255,.4);
-
-    border-radius:20px;
-
-}
-
-input,
-textarea{
-
-    width:100%;
-
-    padding:15px;
+.goals ul{
 
     margin-top:15px;
 
-    border-radius:12px;
+}
 
-    border:1px solid #ddd;
+.goals li{
 
-    outline:none;
-
-    font-size:16px;
+    margin-bottom:15px;
 
 }
 
-input:focus,
-textarea:focus{
 
-    border-color:#8b5cf6;
+/* ==========================================
+            CARD ANIMATION
+========================================== */
 
-}
+.featured .card,
 
-.float{
+.projects .card,
 
-    animation:floating 3s ease-in-out infinite;
+.journey .card,
 
-}
-
-@keyframes floating{
-
-    0%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-12px);
-
-    }
-
-    100%{
-
-        transform:translateY(0);
-
-    }
-
-}
-
-hr{
-
-    border:none;
-
-    height:2px;
-
-    background:#e9d5ff;
-
-    margin:60px auto;
-
-    width:80%;
-
-}
-
-::selection{
-
-    background:#8b5cf6;
-
-    color:white;
-
-}
-
-img{
+.goals .card{
 
     transition:.4s;
 
 }
 
-img:hover{
+.featured .card:hover,
 
-    transform:scale(1.05);
+.projects .card:hover,
+
+.journey .card:hover,
+
+.goals .card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 55px rgba(124,58,237,.18);
 
 }
 
-body{
+
+/* ==========================================
+            PROJECT ICONS
+========================================== */
+
+.projects h3{
+
+    color:#7c3aed;
+
+    font-size:26px;
+
+    margin-bottom:25px;
+
+}
+
+
+/* ==========================================
+            LIST STYLE
+========================================== */
+
+.projects li,
+
+.goals li{
+
+    list-style:none;
+
+    padding:12px;
+
+    margin-bottom:12px;
+
+    background:#f7f3ff;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.projects li:hover,
+
+.goals li:hover{
+
+    background:#ede9fe;
+
+    transform:translateX(8px);
+
+}
+
+
+/* ==========================================
+            FEATURED GRADIENT
+========================================== */
+
+.featured .card{
 
     background:linear-gradient(
 
-        to bottom,
+        135deg,
 
         #ffffff,
 
-        #fcfaff,
-
-        #f5f3ff
+        #faf5ff
 
     );
 
 }
 
-::-webkit-scrollbar{
 
-    width:10px;
+/* ==========================================
+            SECTION TITLE EFFECT
+========================================== */
+
+.featured h2,
+
+.projects h2,
+
+.journey h2,
+
+.goals h2{
+
+    position:relative;
 
 }
 
-::-webkit-scrollbar-track{
+.featured h2::after,
 
-    background:#f3f4f6;
+.projects h2::after,
+
+.journey h2::after,
+
+.goals h2::after{
+
+    content:"";
+
+    width:90px;
+
+    height:5px;
+
+    background:#8b5cf6;
+
+    display:block;
+
+    margin:15px auto;
+
+    border-radius:20px;
+
+}
+
+/* ==========================================
+            CONTACT
+========================================== */
+
+.contact{
+
+    background:#faf7ff;
+
+}
+
+.contact-container{
+
+    max-width:800px;
+
+    margin:auto;
+
+}
+
+.contact form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.contact input,
+
+.contact textarea{
+
+    width:100%;
+
+    padding:18px;
+
+    border:2px solid #e9d5ff;
+
+    border-radius:15px;
+
+    outline:none;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+.contact input:focus,
+
+.contact textarea:focus{
+
+    border-color:#8b5cf6;
+
+    box-shadow:0 0 15px rgba(139,92,246,.2);
+
+}
+
+.contact button{
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#8b5cf6;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.contact button:hover{
+
+    background:#6d28d9;
+
+    transform:translateY(-5px);
+
+}
+
+
+/* ==========================================
+            SOCIAL
+========================================== */
+
+.social{
+
+    text-align:center;
+
+}
+
+.social-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.social a{
+
+    text-decoration:none;
+
+    background:#8b5cf6;
+
+    color:white;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.social a:hover{
+
+    background:#6d28d9;
+
+    transform:translateY(-5px);
+
+}
+
+
+/* ==========================================
+            THANK YOU
+========================================== */
+
+.thankyou{
+
+    background:#faf7ff;
+
+}
+
+.thankyou .card{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.thankyou p{
+
+    margin-top:20px;
+
+    line-height:2;
+
+    font-size:18px;
+
+}
+
+
+/* ==========================================
+            FOOTER
+========================================== */
+
+footer{
+
+    background:#7c3aed;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+
+/* ==========================================
+            DARK MODE
+========================================== */
+
+body.dark{
+
+    background:#111827;
+
+    color:white;
+
+}
+
+body.dark .card{
+
+    background:#1f2937;
+
+    color:white;
+
+}
+
+body.dark .navbar{
+
+    background:rgba(17,24,39,.95);
+
+}
+
+body.dark .hero-card{
+
+    background:#1f2937;
+
+}
+
+body.dark input,
+
+body.dark textarea{
+
+    background:#374151;
+
+    color:white;
+
+}
+
+
+/* ==========================================
+            RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+.hero{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.about-container,
+
+.learning-container,
+
+.projects-container,
+
+.milestone-container,
+
+.goals-container,
+
+.skills-container{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+.navbar{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.about-container,
+
+.learning-container,
+
+.projects-container,
+
+.milestone-container,
+
+.goals-container,
+
+.skills-container{
+
+    grid-template-columns:1fr;
+
+}
+
+.hero-content h1{
+
+    font-size:42px;
+
+}
+
+.hero-card{
+
+    width:100%;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+}
+
+.nav-links{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.social-container{
+
+    flex-direction:column;
+
+}
+
+}
+
+
+/* ==========================================
+            SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
 
 }
 
@@ -1224,147 +1268,64 @@ body{
 
 }
 
-#topBtn{
+::-webkit-scrollbar-track{
 
-    position:fixed;
+    background:#f3f4f6;
 
-    bottom:30px;
+}
 
-    right:30px;
 
-    display:none;
+/* ==========================================
+            SELECTION
+========================================== */
 
-    padding:15px;
+::selection{
 
-    border:none;
+    background:#c4b5fd;
 
-    border-radius:50%;
+    color:#111;
 
-    background:#7c3aed;
+}
 
-    color:white;
 
-    cursor:pointer;
+/* ==========================================
+            BUTTON ANIMATION
+========================================== */
 
-    font-size:18px;
-
-    box-shadow:0 10px 20px rgba(0,0,0,.2);
+button{
 
     transition:.3s;
 
 }
 
-#topBtn:hover{
+button:hover{
 
-    background:#5b21b6;
-
-}
-
-.dark{
-
-    background:#111827;
-
-    color:white;
+    transform:scale(1.05);
 
 }
 
-.dark section{
 
-    background:#111827;
-
-}
-
-.dark .card{
-
-    background:#1f2937;
-
-    color:white;
-
-}
-
-#typing{
-
-    font-size:28px;
-
-    color:#7c3aed;
-
-    font-weight:bold;
-
-    margin-top:20px;
-
-}
+/* ==========================================
+            SMOOTH FADE
+========================================== */
 
 .card{
 
-    opacity:0;
-
-    transform:translateY(50px);
-
-    transition:1s;
+    animation:fadeIn .8s ease;
 
 }
 
-.card.show{
+@keyframes fadeIn{
 
-    opacity:1;
-
-    transform:translateY(0);
-
-}
-
-/* LOADER */
-
-#loader{
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100vh;
-
-background:white;
-
-z-index:9999;
-
-}
-
-/* PROGRESS BAR */
-
-#progress{
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-height:5px;
-
-width:0;
-
-background:#7c3aed;
-
-z-index:999;
-
-}
-
-/* REVEAL */
-
-section{
+from{
 
 opacity:0;
 
-transform:translateY(40px);
-
-transition:1s;
+transform:translateY(30px);
 
 }
 
-section.visible{
+to{
 
 opacity:1;
 
@@ -1372,17 +1333,4 @@ transform:translateY(0);
 
 }
 
-/* GREETING */
-
-#greeting{
-
-text-align:center;
-
-color:#7c3aed;
-
-margin-top:20px;
-
 }
-
-
-
