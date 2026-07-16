@@ -1,70 +1,49 @@
-/* ==========================
-        THEME TOGGLE
-========================== */
+console.log("Portfolio Loaded Successfully 🚀");
 
-const themeBtn = document.querySelector(".theme-btn");
+alert("Welcome to Arohi's Portfolio 💜");
 
-themeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
+let name = "Arohi";
 
-    if(document.body.classList.contains("dark-mode")){
-        themeBtn.innerHTML = "☀️";
-    } else {
-        themeBtn.innerHTML = "🌙";
-    }
-});
+console.log(name);
 
+let projectButton = document.getElementById("projectBtn");
 
-/* ==========================
-        SMOOTH SCROLL
-========================== */
+projectButton.onclick = function(){
 
-document.querySelectorAll("nav ul li a").forEach(link => {
-    link.addEventListener("click", function(e){
-        e.preventDefault();
+    alert("Projects section is coming soon 🚀");
 
-        const target = document.querySelector(this.getAttribute("href"));
+}
 
-        target.scrollIntoView({
-            behavior: "smooth"
-        });
-    });
-});
+let contactButton = document.getElementById("contactBtn");
 
+contactButton.onclick = function(){
 
-/* ==========================
-        SCROLL ANIMATION
-========================== */
+    alert("Thank you for visiting my portfolio 💜");
 
-window.addEventListener("scroll", () => {
+}
 
-    let elements = document.querySelectorAll(".project-card, .skill-card, .stat-box, .contact-card, .timeline-item");
+let heading = document.getElementById("title");
 
-    elements.forEach(el => {
+heading.innerHTML = "Welcome To My Portfolio 💜";
 
-        let position = el.getBoundingClientRect().top;
+heading.style.color = "#7c3aed";
 
-        let screenHeight = window.innerHeight;
+document.body.style.background = "#ffffff";
 
-        if(position < screenHeight - 100){
-            el.style.opacity = "1";
-            el.style.transform = "translateY(0)";
-            el.style.transition = "0.6s ease";
-        } else {
-            el.style.opacity = "0";
-            el.style.transform = "translateY(40px)";
-        }
+heading.onmouseover = function(){
 
-    });
+    heading.style.color = "deeppink";
 
-});
+}
 
+heading.onmouseout = function(){
 
-/* ==========================
-        INITIAL STATE
-========================== */
+    heading.style.color = "#7c3aed";
 
-document.querySelectorAll(".project-card, .skill-card, .stat-box, .contact-card, .timeline-item").forEach(el => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(40px)";
-});
+}
+
+let currentYear = new Date().getFullYear();
+
+document.getElementById("year").innerHTML =
+
+"© " + currentYear + " Arohi";
