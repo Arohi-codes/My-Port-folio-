@@ -148,3 +148,107 @@ window.onload = function(){
     console.log("Welcome to Arohi's Portfolio 💜");
 
 };
+
+// ===============================
+// TYPING EFFECT
+// ===============================
+
+const text = [
+
+    "Future Software Engineer 💜",
+
+    "Future Startup Founder 🚀",
+
+    "Python Developer 🐍",
+
+    "Web Developer 🌐",
+
+    "Dream Chaser ✨"
+
+];
+
+let index = 0;
+
+const typing = document.getElementById("typing");
+
+setInterval(function(){
+
+    typing.innerHTML = text[index];
+
+    index++;
+
+    if(index >= text.length){
+
+        index = 0;
+
+    }
+
+},2000);
+
+// ===============================
+// DARK MODE
+// ===============================
+
+const modeBtn = document.getElementById("modeBtn");
+
+modeBtn.addEventListener("click",function(){
+
+    document.body.classList.toggle("dark");
+
+});
+
+// ===============================
+// COUNTER
+// ===============================
+
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter=>{
+
+    let count = 0;
+
+    const target = Number(counter.innerHTML);
+
+    counter.innerHTML = 0;
+
+    const timer = setInterval(function(){
+
+        count++;
+
+        counter.innerHTML = count;
+
+        if(count >= target){
+
+            clearInterval(timer);
+
+        }
+
+    },30);
+
+});
+
+// ===============================
+// SCROLL ANIMATION
+// ===============================
+
+const cards = document.querySelectorAll(".card");
+
+window.addEventListener("scroll",function(){
+
+    cards.forEach(card=>{
+
+        const position = card.getBoundingClientRect().top;
+
+        const screen = window.innerHeight;
+
+        if(position < screen-100){
+
+            card.classList.add("show");
+
+        }
+
+    });
+
+});
+
+
