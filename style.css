@@ -1224,3 +1224,91 @@ body{
 
 }
 
+#topBtn{
+
+    position:fixed;
+
+    bottom:30px;
+
+    right:30px;
+
+    display:none;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#7c3aed;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+
+    transition:.3s;
+
+}
+
+#topBtn:hover{
+
+    background:#5b21b6;
+
+}
+
+.dark{
+
+    background:#111827;
+
+    color:white;
+
+}
+
+.dark section{
+
+    background:#111827;
+
+}
+
+.dark .card{
+
+    background:#1f2937;
+
+    color:white;
+
+}
+
+#typing{
+
+    font-size:28px;
+
+    color:#7c3aed;
+
+    font-weight:bold;
+
+    margin-top:20px;
+
+}
+
+.card{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:1s;
+
+}
+
+.card.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
